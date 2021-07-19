@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ArticleStock{% endblock %}
+
+{% block body %}
+    <h1>ArticleStock</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article_stock.id }}</td>
+            </tr>
+            <tr>
+                <th>PrixAchat</th>
+                <td>{{ article_stock.prixAchat }}</td>
+            </tr>
+            <tr>
+                <th>PrixVente</th>
+                <td>{{ article_stock.prixVente }}</td>
+            </tr>
+            <tr>
+                <th>TauxTVA</th>
+                <td>{{ article_stock.tauxTVA }}</td>
+            </tr>
+            <tr>
+                <th>Remise</th>
+                <td>{{ article_stock.remise }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ article_stock.quantite }}</td>
+            </tr>
+            <tr>
+                <th>DateReception</th>
+                <td>{{ article_stock.dateReception ? article_stock.dateReception|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateCommande</th>
+                <td>{{ article_stock.dateCommande ? article_stock.dateCommande|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('article_stock_index') }}">back to list</a>
+
+    <a href="{{ path('article_stock_edit', {'id': article_stock.id}) }}">edit</a>
+
+    {{ include('article_stock/_delete_form.html.twig') }}
+{% endblock %}
