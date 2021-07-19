@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <header>
+        <img src="{{ asset('image/header.jpg')}}" alt="rust-texture">
+
+        <h1>
+            <a href="#">Bienvenue sur notre Blog</a>
+        </h1>
+
+        <nav class="log-nav">
+                <p>Bonjour </p>
+                <p>
+                    <a href=""> Se Déconnecter</a>
+                </p>
+          
+                <p>
+                    <a href="">Se Connecter</a>
+                </p>
+
+                <p>
+                    <a href="">Créer un compte</a>
+                </p>
+        </nav>
+    </header>
+    
+    <main class="container">
+        {% block content %}
+            {# c'est ici que viendra s'inserer le contenu propre à chaque page  #}
+        {% endblock %} 
+    </main>
+
+    <footer>
+        <img src="{{ asset('image/footer.jpg')}}" alt="footer rust-texture">
+
+        <nav class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <p><a href="">Qui sommes nous ?</a></p>
+                <p><a href=""></a>CGV</p>
+                <p><a href=""></a>Nous Contacter</p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <p><a href="">Nos Valeurs</a></p>
+                <p><a href=""></a>Devenir blogueur</p>
+                <p><a href=""></a>rejoindre l'équipe</p>
+            </div>
+
+        </nav>
+
+        <div class="copyright">
+            <p>
+                &copy;MonBlog 2002 - {{"now" | date("Y") }} all right reserved for all countries including Groland
+            </p>
+        </div>
+    </footer>
+
+{% endblock %}
